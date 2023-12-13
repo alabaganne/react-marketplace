@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-special {
+  font-family: 'Lalezar';
+}
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer components {
+  .btn {
+    @apply rounded-md px-3.5 py-2.5 text-sm font-medium text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 border border-transparent flex items-center gap-1 justify-center;
+  }
+  .btn-primary {
+    @apply bg-indigo-600  hover:bg-indigo-500;
+  }
+  .btn-secondary {
+    @apply bg-transparent text-black border-black bg-gray-50 hover:bg-gray-100 shadow-sm;
+  }
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8;
+  }
+  .form-group {
+    @apply mb-4;
+  }
+  .form-group label {
+    @apply block text-sm font-medium text-gray-900 mb-1;
+  }
+  .form-control {
+    @apply w-full border border-gray-200 rounded-lg p-2;
+  }
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
