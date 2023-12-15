@@ -18,6 +18,9 @@ const navigation = [
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const isLoggedIn = false;
+
   return (
     <header>
       <nav
@@ -53,20 +56,26 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="flex gap-3">
-            <Link
-              to="/auth/login"
-              className="text-sm font-medium leading-6 border border-transparent bg-black hover:bg-gray-700 px-4 py-2 rounded text-white flex-center"
-            >
-              <UserCircleIcon className="h-5 w-5 mr-1" />
-              Login
-            </Link>
-            <Link
-              to="/auth/register"
-              className="text-sm font-medium leading-6 border px-4 py-2 rounded flex-center hover:bg-black hover:text-white hover:border-transparent"
-            >
-              <ArrowRightOnRectangleIcon className="h-5 w-5 mr-1" />
-              <span>Register</span>
-            </Link>
+            {isLoggedIn ? (
+              <></>
+            ) : (
+              <>
+                <Link
+                  to="/auth/login"
+                  className="text-sm font-medium leading-6 border border-transparent bg-black hover:bg-gray-700 px-4 py-2 rounded text-white flex-center"
+                >
+                  <UserCircleIcon className="h-5 w-5 mr-1" />
+                  Login
+                </Link>
+                <Link
+                  to="/auth/register"
+                  className="text-sm font-medium leading-6 border px-4 py-2 rounded flex-center hover:bg-black hover:text-white hover:border-transparent"
+                >
+                  <ArrowRightOnRectangleIcon className="h-5 w-5 mr-1" />
+                  <span>Register</span>
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>

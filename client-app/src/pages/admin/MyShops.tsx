@@ -20,7 +20,7 @@ const MyShops = () => {
   function handleDelete(id: number) {
     const c = confirm('Are you sure you want to delete this shop?');
     if (c) {
-      alert('Delete shop');
+      alert('Delete shop: ' + id);
     }
   }
 

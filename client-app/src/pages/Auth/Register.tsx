@@ -29,6 +29,8 @@ const Register = () => {
     };
     console.log(newUser);
     // TODO: send request to save user in the database
+
+    alert('User created successfully.');
   }
 
   return (
