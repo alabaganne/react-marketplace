@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 import ShopProducts from './pages/ShopProducts';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
-import MyStores from './pages/Admin/MyStores';
+import MyShops from './pages/Admin/MyShops';
 import CreateStore from './pages/Admin/CreateStore';
 import ProductsList from './pages/Admin/ProductsList';
 import CreateProduct from './pages/Admin/CreateProduct';
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
         ],
       },
       {
-        path: 'admin/',
+        path: '/admin/',
         element: (
           <div className="container">
             <Outlet />
@@ -70,23 +70,23 @@ const router = createBrowserRouter([
         ),
         children: [
           {
-            path: 'stores/',
-            element: <MyStores />,
+            path: 'shops/',
+            element: <MyShops />,
           },
           {
-            path: 'stores/create/',
+            path: 'shops/create/',
             element: <CreateStore />,
           },
           {
-            path: 'stores/:id/products/',
+            path: 'shops/:id/products/',
             element: <ProductsList />,
           },
           {
-            path: 'stores/:id/products/create/',
+            path: 'shops/:id/products/create/',
             element: <CreateProduct />,
           },
           {
-            path: 'stores/:id/products/:id/',
+            path: 'shops/:id/products/:id/',
             element: <EditProduct />,
           },
         ],

@@ -1,18 +1,22 @@
 import React from 'react';
 import Card from '../../components/Card';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [userData, setUserData] = React.useState({
-    email: '',
+    username: '',
     password: '',
   });
 
+  const navigate = useNavigate();
+
   function handleSubmit() {
-    if (!userData.email || !userData.password) {
+    if (!userData.username || !userData.password) {
       return alert('Please fill all the fields.');
     }
     // TODO: send request to login user
+
+    navigate('/admin/shops/');
   }
 
   return (
@@ -24,19 +28,19 @@ const Login = () => {
       >
         <form action="" className="p-6">
           <div className="form-group">
-            <label htmlFor="email">Email address:</label>
+            <label htmlFor="username">Username:</label>
             <input
-              type="email"
+              type="username"
               className="form-control"
-              placeholder="johndoe@example.com"
-              value={userData.email}
+              placeholder="johndoe"
+              value={userData.username}
               onChange={(e) =>
-                setUserData({ ...userData, email: e.target.value })
+                setUserData({ ...userData, username: e.target.value })
               }
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Password:</label>
+            <label htmlFor="username">Password:</label>
             <input
               type="password"
               className="form-control"

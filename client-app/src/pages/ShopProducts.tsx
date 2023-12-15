@@ -97,7 +97,7 @@ const ShopProducts = () => {
             {products.map((p) => {
               return (
                 <div key={p.id}>
-                  <ProductCard {...p} />
+                  <ProductCard {...p} phone={shop.phone} />
                 </div>
               );
             })}

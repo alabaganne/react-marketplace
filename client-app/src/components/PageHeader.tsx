@@ -4,6 +4,7 @@ interface Props {
   title: string;
   subtitle: string;
   icon?: React.ReactNode;
+  right?: React.ReactNode;
 }
 
 const PageHeader = (props: Props) => {
@@ -12,6 +13,7 @@ const PageHeader = (props: Props) => {
       <h1 className="text-6xl font-special">{props.title}</h1>
       <div className="text-gray-400">|</div>
       <p className="text-sm text-indigo-500 font-medium">{props.subtitle}</p>
+      <div className="ml-auto">{props.right ? props.right : <></>}</div>
     </div>
   );
 };

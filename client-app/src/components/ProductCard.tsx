@@ -1,11 +1,14 @@
-import React from 'react';
 import Product from '../interfaces/product';
 import Card from './Card';
-import { ShoppingCartIcon, StarIcon } from '@heroicons/react/24/solid';
+import { PhoneIcon, StarIcon } from '@heroicons/react/24/solid';
 import { PhotoIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
-const ProductCard = (p: Product) => {
+interface Props extends Product {
+  phone: string;
+}
+
+const ProductCard = (p: Props) => {
   function addToCart() {
     console.log('add to cart');
   }
@@ -41,13 +44,13 @@ const ProductCard = (p: Product) => {
         >
           View -&gt;
         </Link>
-        <button
-          className="flex items-center justify-center p-3 text-xs font-medium border-r border-gray-200 bg-gray-50 hover:bg-gray-100 w-1/2"
+        <div
+          className="flex items-center justify-center p-3 text-xs font-medium border-r border-gray-200 bg-gray-50  w-1/2"
           onClick={addToCart}
         >
-          <ShoppingCartIcon className="h-4 w-4 mr-0.5 text-indigo-600" />
-          <span>Add to Cart</span>
-        </button>
+          <PhoneIcon className="h-4 w-4 mr-1 text-indigo-600" />
+          <span>{p.phone}</span>
+        </div>
       </div>
     </Card>
   );
