@@ -30,7 +30,9 @@ const Login = () => {
           <div className="form-group">
             <label htmlFor="username">Username:</label>
             <input
-              type="username"
+              type="text"
+              name="username"
+              id="username"
               className="form-control"
               placeholder="johndoe"
               value={userData.username}
@@ -40,9 +42,11 @@ const Login = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="username">Password:</label>
+            <label htmlFor="password">Password:</label>
             <input
               type="password"
+              name="password"
+              id="password"
               className="form-control"
               value={userData.password}
               onChange={(e) =>

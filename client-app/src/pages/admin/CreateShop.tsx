@@ -54,6 +54,12 @@ const Login = () => {
           >
             Submit
           </button>
+          <p className="text-sm text-gray-600 mt-2">
+            &lt;- Go back to{' '}
+            <Link className="link" to="/admin/shops">
+              Shops list
+            </Link>
+          </p>
         </form>
       </Card>
     </div>

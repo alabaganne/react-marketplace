@@ -3,6 +3,8 @@ import PageHeader from '../../components/PageHeader';
 import { ShoppingBagIcon } from '@heroicons/react/24/solid';
 import { Link } from 'react-router-dom';
 
+import shops from '../../data/shops';
+
 const Right = () => {
   return (
     <div className="flex items-center gap-4">
@@ -15,6 +17,13 @@ const Right = () => {
 };
 
 const MyShops = () => {
+  function handleDelete(id: number) {
+    const c = confirm('Are you sure you want to delete this shop?');
+    if (c) {
+      alert('Delete shop');
+    }
+  }
+
   return (
     <div>
       <PageHeader
@@ -48,12 +57,30 @@ const MyShops = () => {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            <tr>
-              <td className="px-6 py-4 whitespace-nowrap">John Doe</td>
-              <td className="px-6 py-4 whitespace-nowrap">
-                john.doe@example.com
-              </td>
-            </tr>
+            {shops.map((shop) => (
+              <tr>
+                <td className="px-6 py-4 whitespace-nowrap font-bold">
+                  {shop.name}
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  {shop.description.slice(0, 60)}...
+                </td>
+                <td className="flex items-center justify-end gap-2 px-6 py-4">
+                  <Link to="/shops" className="btn btn-sm btn-primary">
+                    View -&gt;
+                  </Link>
+                  <Link to="1/edit" className="btn btn-sm btn-black">
+                    Edit -&gt;
+                  </Link>
+                  <button
+                    className="btn btn-sm btn-danger"
+                    onClick={() => handleDelete(1)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

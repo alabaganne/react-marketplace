@@ -40,9 +40,11 @@ const Register = () => {
       >
         <form action="" className="p-6">
           <div className="form-group">
-            <label htmlFor="email">Username:</label>
+            <label htmlFor="username">Username:</label>
             <input
-              type="email"
+              type="text"
+              name="username"
+              id="username"
               className="form-control"
               placeholder="johndoe@example.com"
               value={userData.username}

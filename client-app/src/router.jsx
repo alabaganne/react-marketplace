@@ -10,6 +10,7 @@ import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import MyShops from './pages/Admin/MyShops';
 import CreateShop from './pages/Admin/CreateShop';
+import EditShop from './pages/Admin/EditShop';
 import ProductsList from './pages/Admin/ProductsList';
 import CreateProduct from './pages/Admin/CreateProduct';
 import EditProduct from './pages/Admin/EditProduct';
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
           {
             path: 'shops/create/',
             element: <CreateShop />,
+          },
+          {
+            path: 'shops/:id/edit/',
+            element: <EditShop />,
           },
           {
             path: 'shops/:id/products/',
