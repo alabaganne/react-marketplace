@@ -1,5 +1,10 @@
 import { Dialog } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowRightOnRectangleIcon,
+  Bars3Icon,
+  UserCircleIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline';
 import React, { useState } from 'react';
 import Logo from './Logo';
 import { Link } from 'react-router-dom';
@@ -34,19 +39,35 @@ const Navbar = () => {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="hidden lg:flex items-center lg:gap-x-12">
           {navigation.map((item) => (
             <Link
               key={item.name}
               to={item.href}
               className={
-                'text-sm font-medium leading-6' +
-                (item.active ? ' text-indigo-600' : '')
+                'text-sm text-gray-500 hover:text-gray-900 leading-6' +
+                (item.active ? ' text-gray-900 font-medium ' : '')
               }
             >
               {item.name}
             </Link>
           ))}
+          <div className="flex gap-3">
+            <Link
+              to="/auth/login"
+              className="text-sm font-medium leading-6 border border-transparent bg-black hover:bg-gray-700 px-4 py-2 rounded text-white flex-center"
+            >
+              <UserCircleIcon className="h-5 w-5 mr-1" />
+              Login
+            </Link>
+            <Link
+              to="/auth/register"
+              className="text-sm font-medium leading-6 border px-4 py-2 rounded flex-center hover:bg-black hover:text-white hover:border-transparent"
+            >
+              <ArrowRightOnRectangleIcon className="h-5 w-5 mr-1" />
+              <span>Register</span>
+            </Link>
+          </div>
         </div>
       </nav>
       <Dialog

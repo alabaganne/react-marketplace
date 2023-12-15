@@ -17,7 +17,7 @@ const Card = ({ className = '', children, title, subtitle }: Props) => {
     >
       {title && (
         <div className="p-6 border-b border-gray-200">
-          <h3 className="font-special text-3xl text-indigo-500">{title}</h3>
+          <h3 className="font-special text-3xl text-indigo-600">{title}</h3>
           {subtitle && (
             <p className="text-sm text-gray-500 font-medium">{subtitle}</p>
           )}

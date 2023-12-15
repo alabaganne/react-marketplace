@@ -34,4 +34,7 @@ body {
   .flex-center {
     @apply flex justify-center items-center;
   }
+  .link {
+    @apply font-medium text-black hover:text-gray-700 hover:underline;
+  }
 }

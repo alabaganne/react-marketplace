@@ -1,5 +1,4 @@
 import Logo from '../components/Logo';
-import AppLayout from '../components/AppLayout';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
